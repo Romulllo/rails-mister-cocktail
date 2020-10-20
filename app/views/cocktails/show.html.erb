@@ -6,10 +6,16 @@
 <div class="container mt-4" style=" background: red ">
   <div class="row">
     <div class="col-sm p-2" style=" background: green ">
-      1 of 2 
+      <h3>description</h3>
+
     </div>
     <div class="col-sm p-4" style=" background: blue ">
-      2 of 2
+      <h1> Ingredient: %></h1>
+
+      <%= simple_form_for [ @dose, @ingredient ] do |f| %>
+        <%= f.input :ingredient, collection: @ingredients, input_html: {multiple: true, class: 'multiple-select'} %>
+        <%= f.submit "Add ingredient", class: 'btn btn-primary' %>
+      <% end %>
     </div>
   </div>
 </div>
