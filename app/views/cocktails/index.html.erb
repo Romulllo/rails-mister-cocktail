@@ -1,0 +1,35 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-12">
+      <h1>All our Cocktail</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+        <p>All <%= @cocktails.count %> cocktails.</p>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-4">
+        <div class="flat-card">
+          <div class="flat-card-image" style="background-image: url('https://images.unsplash.com/photo-1551538827-9c037cb4f32a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=701&q=80')"></div>
+          <div class="flat-card-content">
+            <div class="flat-card-title">
+              <h4><%= cocktail.name.titleize %></h4>
+            </div>
+            <p><%= 'descricao do item' %></p>
+          </div>
+          <div class="flat-card-actions">
+            <%= link_to 'Info', cocktail_path(id: cocktail.id) %>
+            <%= link_to 'Edit', edit_cocktail_path(id: cocktail.id), class: 'ml-3 text-warning' %>
+            <%= link_to 'Remove', cocktail_path(id: cocktail.id), method: :delete, data: {confirm: "Are you sure?"}, class: 'ml-3 text-danger' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

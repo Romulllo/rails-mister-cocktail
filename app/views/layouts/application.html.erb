@@ -7,9 +7,32 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+
+    <meta name="csrf-param" content="authenticity_token" />
+    <meta name="csrf-token" content="QC1IzLGUiHTxDTMN7V+E9PcxSmCs+naJG/1qAf2vj6PsCwcRvhNiqH5G/VIM/eSgRlNgQ47wXM+PjkPdPqLxzA==" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <link rel="stylesheet" media="all" href="/assets/application-6502403468dfbc20a08319e14cf02150d3c5cadebcd825473006e83ddf10c24e.css" data-turbolinks-track="reload" />
+    <script src="/assets/application-dcfb333542166c7e176ac13945f5c27350627b932d212a870a5a112daf6d4db9.js" data-turbolinks-track="reload"></script>
+
   </head>
 
   <body>
+
+    <nav class="navbar navbar-light bg-light fixed-top">
+      <%= link_to 'Cocktails', root_path, class: 'navbar-brand' %>
+      <form class="form-inline">
+         <%= link_to 'Add Cocktail', new_cocktail_path, class: 'btn btn-outline-primary my-2 my-sm-2' %>
+      </form>
+    </nav>
+
+    <div class="container" style="margin-top: 30px;">.</div>
+
     <%= yield %>
   </body>
 </html>
