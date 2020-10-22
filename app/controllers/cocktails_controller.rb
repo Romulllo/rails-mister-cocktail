@@ -34,7 +34,9 @@ class CocktailsController < ApplicationController
     redirect_to cocktails_path
   end
 
-  def show    
+  def show
+    @dose = Dose.new
+    @ingredients = Ingredient.all
   end
 
   private
